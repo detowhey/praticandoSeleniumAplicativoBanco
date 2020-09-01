@@ -15,7 +15,7 @@ public abstract class BaseTeste {
     private WebDriver webDriver;
     private Interacao interacao;
 
-    public WebDriver getWebDriver() {
+    protected WebDriver getWebDriver() {
         return webDriver;
     }
 
@@ -25,7 +25,7 @@ public abstract class BaseTeste {
     }
 
     @Before
-    public void inicializarInstancias() {
+    public void iniciarConfiguracao() {
         webDriver = new ChromeDriver();
         webDriver.get("http://www.way2automation.com/angularjs-protractor/banking/#/login");
         webDriver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);

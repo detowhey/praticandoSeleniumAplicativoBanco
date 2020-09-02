@@ -32,6 +32,6 @@ public abstract class BaseTeste {
 
     @After
     public void fecharNavegador() {
-        webDriver.quit();
+        //webDriver.quit();
     }
 }

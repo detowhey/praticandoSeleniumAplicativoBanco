@@ -9,15 +9,9 @@ public class AbrirContaPagina extends GerentePagina {
         super(webDriver);
     }
 
-    public void selecionarOpcaoCliente(String textoVisivel) {
-        getInteracao().selecionarOpcaoTextoVisivel(By.id("userSelect"), textoVisivel);
-    }
-
-    public void selecionarOpcaoMoeda(String textoVisivel) {
-        getInteracao().selecionarOpcaoTextoVisivel(By.id("currency"), textoVisivel);
-    }
-
-    public void selecionarOpcaoMoeda() {
+    public void abrirConta() {
+        getInteracao().pegarElementoAleatorioCaixaSelecao(By.id("userSelect"));
         getInteracao().pegarElementoAleatorioCaixaSelecao(By.id("currency"));
+        getInteracao().clicarElemento(By.xpath("//button[. = \"Process\"]"));
     }
 }

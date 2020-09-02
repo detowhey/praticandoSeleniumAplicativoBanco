@@ -1,11 +1,13 @@
 package br.eti.henriquealmeida.interacao;
 
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 
 import java.util.List;
+import java.util.Random;
 
 public class Interacao {
 
@@ -15,11 +17,11 @@ public class Interacao {
         this.webDriver = webDriver;
     }
 
-    private WebElement pesquisarElemento(String idElemento) {
+    public WebElement pesquisarElemento(String idElemento) {
         return webDriver.findElement(By.id(idElemento));
     }
 
-    private WebElement pesquisarElemento(By tipoPesquisa) {
+    public WebElement pesquisarElemento(By tipoPesquisa) {
         return webDriver.findElement(tipoPesquisa);
     }
 
@@ -51,8 +53,17 @@ public class Interacao {
         new Select(pesquisarElemento(tipoPesquisa)).selectByVisibleText(valorVisivel);
     }
 
-    public void selecionarOpcaoPorValor(By tipoPesquisa, String valor) {
-        new Select(pesquisarElemento(tipoPesquisa)).selectByValue(valor);
+    public List<WebElement> pegarOpcoesCaixaSelecao(By tipoPesquisa) {
+        return new Select(pesquisarElemento(tipoPesquisa)).getOptions();
+    }
+
+    public void pegarElementoAleatorioCaixaSelecao(By tipoPesquisa) {
+
+        Random randomico = new Random();
+        int tamanhoLista = pegarOpcoesCaixaSelecao(tipoPesquisa).size();
+        int indiceAleatorio = randomico.nextInt(tamanhoLista);
+
+        pegarOpcoesCaixaSelecao(tipoPesquisa).get(indiceAleatorio).click();
     }
 
     public String pegarTextoElemento(By tipoPesquisa) {
@@ -69,5 +80,10 @@ public class Interacao {
 
     public boolean verificarRadioSelecionado(By tipoPesquisa) {
         return pesquisarElemento(tipoPesquisa).isSelected();
+    }
+
+    public void aceitarAlerta() {
+        Alert alerta = webDriver.switchTo().alert();
+        alerta.accept();
     }
 }

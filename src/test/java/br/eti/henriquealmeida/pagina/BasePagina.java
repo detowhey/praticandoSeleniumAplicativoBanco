@@ -6,7 +6,7 @@ import org.openqa.selenium.WebDriver;
 
 public abstract class BasePagina {
 
-    private Interacao interacao;
+    private final Interacao interacao;
 
     BasePagina(WebDriver webDriver) {
         interacao = new Interacao(webDriver);

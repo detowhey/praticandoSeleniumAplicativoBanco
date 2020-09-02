@@ -4,7 +4,7 @@ import br.eti.henriquealmeida.interacao.Interacao;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-public abstract class BasePagina {
+abstract class BasePagina {
 
     private final Interacao interacao;
 

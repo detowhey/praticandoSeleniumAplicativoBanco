@@ -40,7 +40,6 @@ public class GerenteTeste extends BaseTeste {
         assertEquals(codigoPostal, gerentePagina.procurarValorTabela(codigoPostal));
     }
 
-
     @Test
     public void abrirConta() {
         inicialPagina.clicarBotaoLoginGerente();

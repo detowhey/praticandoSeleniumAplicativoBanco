@@ -10,8 +10,8 @@ public class AbrirContaPagina extends GerentePagina {
     }
 
     public void abrirConta() {
-        getInteracao().pegarElementoAleatorioCaixaSelecao(By.id("userSelect"));
-        getInteracao().pegarElementoAleatorioCaixaSelecao(By.id("currency"));
+        getInteracao().selecionarElementoAleatorioCaixaSelecao(By.id("userSelect"));
+        getInteracao().selecionarElementoAleatorioCaixaSelecao(By.id("currency"));
         getInteracao().clicarElemento(By.xpath("//button[. = \"Process\"]"));
     }
 }

@@ -27,10 +27,15 @@ public abstract class BaseTeste {
         webDriver = new ChromeDriver();
         webDriver.get("http://www.way2automation.com/angularjs-protractor/banking/#/login");
         webDriver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
+        webDriver.manage().window().maximize();
     }
 
     @After
     public void fecharNavegador() {
         webDriver.quit();
+    }
+
+    protected void recarregarPagina() {
+        webDriver.navigate().refresh();
     }
 }

@@ -6,11 +6,11 @@ Projeto de teste de uma aplicação Web, utilizando Selenium WebDriver
 
 * JDK 8 ou superior
 * JUnit 4 ou superior
-* Apacher Maven [Página de download](https://maven.apache.org/download.cgi)
+* Apacher Maven <a href="https://maven.apache.org/download.cgi" target="_blank">Página oficial</a>
 
 ## Ferramentas
-* Selenium WebDriver [Documentação](https://www.selenium.dev/documentation/en/webdriver/)
-* Web Driver Manager [Documentação](https://github.com/bonigarcia/webdrivermanager)
+* Selenium WebDriver <a href="https://www.selenium.dev/documentation/en/webdriver/" target="_blank">Documentação</a>
+* Web Driver Manager <a href="https://github.com/bonigarcia/webdrivermanager" target="_blank">Documentação</a>
 
 ## Casos de teste
 

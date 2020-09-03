@@ -16,5 +16,4 @@ public class InicialPagina extends BasePagina {
     public void clicarBotaoLoginGerente() {
         getInteracao().clicarElemento(By.xpath("//button[. = \"Bank Manager Login\"]"));
     }
-
 }

@@ -9,9 +9,9 @@ public class ClientePagina extends BasePagina {
         super(webDriver);
     }
 
-    public void efetuarLoginCliente() {
-        getInteracao().pegarElementoAleatorioCaixaSelecao(By.id("userSelect"));
-        getInteracao().clicarElemento(By.xpath("//button[. = \"Login\"]'"));
+    public void efetuarLoginCliente(String nomeCliente) {
+        getInteracao().selecionarOpcaoTextoVisivel(By.id("userSelect"), nomeCliente);
+        getInteracao().clicarElemento(By.xpath("//button[. = \"Login\"]"));
     }
 
     public void inserirValorSaque(String valor) {
@@ -27,11 +27,18 @@ public class ClientePagina extends BasePagina {
     }
 
     public String pegarValorMensagem() {
-        return getInteracao().pesquisarElemento(By.xpath("//span[. = \"Deposit Successful\"]")).getText();
+        return getInteracao().pegarTextoElemento(By.xpath("//body/div[@class = \"ng-scope\"]//span[@ng-show = \"message\"]"));
     }
 
-    public void listarTransacoces() {
+    public void clicarBotaoTransacoes() {
         getInteracao().clicarElemento(By.xpath("//button[contains(text(), \"Transactions\")]"));
+    }
 
+    public void fazerSaqueMaiorQueDisponivel() {
+        String valorDisponivel = getInteracao().
+                pegarTextoElemento(By.xpath("//div[@ng-hide=\"noAccount\" and @class= \"center\"][1]/strong[2]"));
+
+        int saqueMaior = Integer.parseInt(valorDisponivel) + 1;
+        inserirValorSaque(String.valueOf(saqueMaior));
     }
 }

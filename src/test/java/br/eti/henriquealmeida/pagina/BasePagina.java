@@ -16,7 +16,7 @@ abstract class BasePagina {
         return interacao;
     }
 
-    protected void clicarBotaoIniciaç(){
+    protected void clicarBotaoInicial(){
         interacao.clicarElemento(By.xpath("//button[. = \"Home\"]"));
     }
 }

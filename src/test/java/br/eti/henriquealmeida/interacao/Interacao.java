@@ -41,7 +41,7 @@ public class Interacao {
         return new Select(pesquisarElemento(tipoPesquisa)).getOptions();
     }
 
-    public void pegarElementoAleatorioCaixaSelecao(By tipoPesquisa) {
+    public void selecionarElementoAleatorioCaixaSelecao(By tipoPesquisa) {
         Random randomico = new Random();
         int tamanhoLista = pegarOpcoesCaixaSelecao(tipoPesquisa).size();
         int indiceAleatorio = randomico.nextInt(tamanhoLista);

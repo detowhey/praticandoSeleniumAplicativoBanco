@@ -2,7 +2,7 @@ package br.eti.henriquealmeida.teste;
 
 import br.eti.henriquealmeida.pagina.ClientePagina;
 import br.eti.henriquealmeida.pagina.InicialPagina;
-import br.eti.henriquealmeida.pagina.TransacoesPagina;
+import br.eti.henriquealmeida.pagina.TransacaoPagina;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
@@ -12,14 +12,14 @@ public class ClienteTeste extends BaseTeste {
 
     private InicialPagina inicialPagina;
     private ClientePagina clientePagina;
-    private TransacoesPagina transacoesPagina;
+    private TransacaoPagina transacoesPagina;
 
     @Override
     public void iniciarConfiguracao() {
         super.iniciarConfiguracao();
         inicialPagina = new InicialPagina(getWebDriver());
         clientePagina = new ClientePagina(getWebDriver());
-        transacoesPagina = new TransacoesPagina(getWebDriver());
+        transacoesPagina = new TransacaoPagina(getWebDriver());
     }
 
     @Test
@@ -40,6 +40,9 @@ public class ClienteTeste extends BaseTeste {
         transacoesPagina.clicarBotaoVoltar();
         clientePagina.inserirValorDeposito("10");
         clientePagina.clicarBotaoTransacoes();
+        recarregarPagina();
+
+        assertEquals("10", transacoesPagina.procurarValorTabela("10"));
     }
 
     @Test

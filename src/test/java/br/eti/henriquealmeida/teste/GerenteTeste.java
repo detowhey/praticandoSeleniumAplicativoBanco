@@ -6,7 +6,7 @@ import br.eti.henriquealmeida.pagina.GerentePagina;
 import br.eti.henriquealmeida.pagina.InicialPagina;
 import org.junit.Test;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.*;
 
 public class GerenteTeste extends BaseTeste {
 
@@ -47,4 +47,14 @@ public class GerenteTeste extends BaseTeste {
         abrirContaPagina.abrirConta();
     }
 
+    @Test
+    public void excluirCliente() {
+        String sobrenome = "Potter";
+
+        inicialPagina.clicarBotaoLoginGerente();
+        gerentePagina.clicarBotaoListarClientes();
+        gerentePagina.excluirCliente(sobrenome);
+
+        assertNotEquals(sobrenome, gerentePagina.procurarValorTabela(sobrenome));
+    }
 }

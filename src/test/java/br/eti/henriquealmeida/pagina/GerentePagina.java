@@ -24,17 +24,24 @@ public class GerentePagina extends BasePagina {
         getInteracao().clicarElemento(By.xpath("//button[contains(text(), \"Customers\")]"));
     }
 
-    public String procurarValorTabela(String valorTexto) {
+    public String procurarValorTabela(String textoPesquisa) {
         String texto = "";
         List<WebElement> linhasTabela = getInteracao()
                 .pesquisarMultiplosElementos(By.xpath("//table[@class =\"table table-bordered table-striped\"]//td"));
 
-        for (WebElement item : linhasTabela) {
-            if (item.getText().equals(valorTexto)) {
-                texto = item.getText();
+        for (WebElement elemento : linhasTabela) {
+            if (elemento.getText().equals(textoPesquisa)) {
+                texto = elemento.getText();
                 break;
             }
         }
         return texto;
+    }
+
+    public void excluirCliente(String sobrenome) {
+        WebElement elemento = getInteracao().pesquisarElemento
+                (By.xpath("//table[@class = \"table table-bordered table-striped\"]/tbody//tr/td[contains (text(), \"" + sobrenome + "\")]/..//button"));
+
+        elemento.click();
     }
 }

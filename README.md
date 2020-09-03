@@ -12,7 +12,7 @@ Projeto de teste de uma aplicação Web, utilizando Selenium WebDriver
 * Selenium WebDriver [Documentação](https://www.selenium.dev/documentation/en/webdriver/)
 * Web Driver Manager [Documentação](https://github.com/bonigarcia/webdrivermanager)
 
-### Casos de teste
+## Casos de teste
 
 **Cenário:** Mensagem deposito com sucesso
 
@@ -106,5 +106,3 @@ Projeto de teste de uma aplicação Web, utilizando Selenium WebDriver
 **Quando** o gerente excluir o registro do cliente
 
 **Então** o registro deve desaparecer da lista
-
------------------------------------------

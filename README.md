@@ -1,5 +1,7 @@
 # Projeto de testes simulando uma aplicação de banco
 
+http://www.way2automation.com/angularjs-protractor/banking/#/login
+
 Projeto de teste de uma aplicação Web, utilizando Selenium WebDriver
 
 ## Requisitos
